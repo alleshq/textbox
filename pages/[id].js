@@ -9,7 +9,7 @@ import moment from "moment";
 
 marked.setOptions({
   breaks: true,
-  highlight: (code, lang) => hljs.highlight(lang, code).value
+  highlight: (code, lang) => (lang && hljs.getLanguage(lang)) ? hljs.highlight(lang, code).value : hljs.highlightAuto(code).value
 });
 
 const DocPage = props => (
