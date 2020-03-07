@@ -46,6 +46,16 @@ export default props => (
         color: #ffffff;
       }
 
+      code {
+        font-family: JetBrainsMono, sans-serif;
+        background: ${theme.foreground};
+        display: inline-block;
+        padding: 10px;
+        max-width: 100%;
+        overflow: auto;
+        box-sizing: border-box;
+      }
+
       a {
         color: inherit;
         text-decoration: none;

@@ -8,7 +8,8 @@ import insane from "insane";
 import moment from "moment";
 
 marked.setOptions({
-  breaks: true
+  breaks: true,
+  highlight: (code, lang) => hljs.highlight(lang, code).value
 });
 
 const DocPage = props => (
@@ -65,9 +66,14 @@ DocPage.getInitialProps = () => {
     id: "69abwj",
     name: "Untitled Document",
     content: `
-<p>Hello, I'm **Archie**.</p>
+hello world
+\`\`\`js
+alert("hi");
+window.location.href = "https://abaer.dev";
+doThing(true, null);
+\`\`\`
     `,
-    highlight: true,
+    highlight: false,
     markdown: true,
     author: "archie",
     createdAt: new Date(0),
@@ -79,7 +85,7 @@ DocPage.getInitialProps = () => {
   } else if (doc.highlight) {
     doc.html = hljs.highlightAuto(doc.content).value;
   } else if (doc.markdown) {
-    doc.html = insane(marked(doc.content));
+    doc.html = marked(insane(doc.content));
   } else {
     doc.html = insane(doc.content);
   }
