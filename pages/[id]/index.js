@@ -1,9 +1,9 @@
-import withAuth from "../util/withAuth";
-import Page from "../components/Page";
-import config from "../config";
-import theme from "../theme";
+import withAuth from "../../util/withAuth";
+import Page from "../../components/Page";
+import config from "../../config";
+import theme from "../../theme";
 import hljs from "highlight.js";
-import "../node_modules/highlight.js/styles/darkula.css";
+import "../../node_modules/highlight.js/styles/darkula.css";
 import marked from "marked";
 import insane from "insane";
 import moment from "moment";
@@ -31,7 +31,21 @@ const DocPage = props =>
       ]}
     >
       <header>
-        <h1>{props.doc.name}</h1>
+        <h1>
+          {props.doc.name}
+          {props.doc.author.id === props.user.id ? (
+            <>
+              {" "}
+              <Link href="/[id]/edit" as={`/${props.doc.id}/edit`}>
+                <a>
+                  <i className="fas fa-edit"></i>
+                </a>
+              </Link>
+            </>
+          ) : (
+            <></>
+          )}
+        </h1>
         <p
           title={
             props.doc.editedAt
@@ -86,7 +100,7 @@ const DocPage = props =>
       </header>
       <div className="content">
         <p>
-          This document could not be found. Perhaps it's expired or been
+          This document could not be found. It could have expired or been
           deleted.
         </p>
         <p>
