@@ -1,18 +1,22 @@
 import withAuth from "../util/withAuth";
 import Page from "../components/Page";
+import config from "../config";
 import theme from "../theme";
 import hljs from "highlight.js";
 import "../node_modules/highlight.js/styles/darkula.css";
 import marked from "marked";
 import insane from "insane";
 import moment from "moment";
+import axios from "axios";
+import {withRouter} from "next/router";
+import Link from "next/link";
 
 marked.setOptions({
   breaks: true,
   highlight: (code, lang) => (lang && hljs.getLanguage(lang)) ? hljs.highlight(lang, code).value : hljs.highlightAuto(code).value
 });
 
-const DocPage = props => (
+const DocPage = props => props.doc ? (
   <Page
     title={props.doc.id}
     user={props.user}
@@ -59,26 +63,45 @@ const DocPage = props => (
       }
     `}</style>
   </Page>
+) : (
+  <Page
+    title="ERROR"
+    user={props.user}
+  >
+    <header>
+      <h1>404: Document Not Found</h1>
+    </header>
+    <div className="content">
+      <p>This document could not be found. Perhaps it's expired or been deleted.</p>
+      <p>Perhaps you could <Link href="/new"><a>create a new one</a></Link>.</p>
+    </div>
+
+    <style jsx>{`
+      header {
+        background: ${theme.foreground};
+        padding: 10px;
+        box-sizing: border-box;
+      }
+
+      header h1 {
+        margin: 0;
+        font-size: 20px;
+      }
+
+      .content {
+        padding: 10px;
+      }
+    `}</style>
+  </Page>
 );
 
-DocPage.getInitialProps = () => {
-  const doc = {
-    id: "69abwj",
-    name: "Untitled Document",
-    content: `
-hello world
-\`\`\`js
-alert("hi");
-window.location.href = "https://abaer.dev";
-doThing(true, null);
-\`\`\`
-    `,
-    highlight: false,
-    markdown: true,
-    author: "archie",
-    createdAt: new Date(0),
-    editedAt: new Date(100000000000)
-  };
+DocPage.getInitialProps = async ctx => {
+  var doc;
+  try {
+    doc = (await axios.get(`${config.apiUrl}/doc/${encodeURIComponent(ctx.query.id)}`)).data;
+  } catch (err) {
+    return {doc: null};
+  }
 
   if (doc.highlight && doc.markdown) {
     doc.html = marked(hljs.highlightAuto(doc.content).value);
@@ -95,4 +118,4 @@ doThing(true, null);
   };
 };
 
-export default withAuth(DocPage, true);
+export default withRouter(withAuth(DocPage, true));
