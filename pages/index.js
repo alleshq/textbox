@@ -38,7 +38,7 @@ const Homepage = props => {
   return (
     <Page user={props.user}>
       <h1>
-        Hey<span style={{ color: theme.yellow }}>,</span> Archie
+        Hey<span style={{ color: theme.yellow }}>,</span> {props.user.nickname}
         {props.user.plus ? <sup style={{ color: theme.green }}>+</sup> : <></>}
       </h1>
       <input
