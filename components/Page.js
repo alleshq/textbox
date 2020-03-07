@@ -12,7 +12,7 @@ export default props => (
       <link rel="shortcut icon" href="/icon.png" />
     </Head>
 
-    <Header user={props.user} />
+    <Header user={props.user} breadcrumbs={props.breadcrumbs} />
     <main>
       <div className="innerMain">{props.children}</div>
     </main>

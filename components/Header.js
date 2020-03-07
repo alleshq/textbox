@@ -27,7 +27,7 @@ export default props => (
     </div>
 
     {props.user ? (
-      <Link href="/[userid]" as={`/${props.user.username}`}>
+      <Link href="/me" as={`/${props.user.username}`}>
         <a className="profilePicture">
           <img src={`https://avatar.alles.cx/user/${props.user.id}`} />
         </a>
@@ -64,14 +64,12 @@ export default props => (
       }
 
       .breadcrumbs span {
-        color: ${theme.grey8};
         font-size: 15px;
         margin: auto 0;
         cursor: default;
       }
 
       .breadcrumbs a.bc {
-        color: ${theme.grey4};
         margin: auto 15px;
         font-size: 15px;
       }
