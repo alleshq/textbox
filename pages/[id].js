@@ -5,6 +5,7 @@ import hljs from "highlight.js";
 import "../node_modules/highlight.js/styles/darkula.css";
 import marked from "marked";
 import insane from "insane";
+import moment from "moment";
 
 marked.setOptions({
   breaks: true
@@ -21,6 +22,7 @@ const DocPage = props => (
   >
     <header>
       <h1>{props.doc.name}</h1>
+      <p>By <a href={`https://alles.cx/u/${props.doc.author}`}>@{props.doc.author}</a> at {moment(props.doc.date).format("LLL")}</p>
     </header>
     <div
       className="content"
@@ -34,9 +36,19 @@ const DocPage = props => (
         box-sizing: border-box;
       }
 
-      h1 {
+      header h1 {
         margin: 0;
         font-size: 20px;
+      }
+
+      header p {
+          margin: 0;
+          margin-top: 5px;
+          font-size: 10px;
+      }
+
+      header a {
+          font-weight: bold;
       }
 
       .content {
@@ -52,16 +64,12 @@ DocPage.getInitialProps = () => {
     id: "69abwj",
     name: "Untitled Document",
     content: `
-Test:
-- a
-- b
-- c
-
-a
-b
+<p>Hello, I'm **Archie**.</p>
     `,
-    highlight: false,
-    markdown: true
+    highlight: true,
+    markdown: true,
+    author: "archie",
+    date: new Date(0)
   };
 
   if (doc.highlight && doc.markdown) {
