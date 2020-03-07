@@ -224,4 +224,4 @@ DocPage.getInitialProps = async ctx => {
   };
 };
 
-export default withRouter(withAuth(DocPage, true));
+export default withRouter(withAuth(DocPage));

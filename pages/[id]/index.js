@@ -33,7 +33,7 @@ const DocPage = props =>
       <header>
         <h1>
           {props.doc.name}
-          {props.doc.author.id === props.user.id ? (
+          {props.user && props.doc.author.id === props.user.id ? (
             <>
               {" "}
               <Link href="/[id]/edit" as={`/${props.doc.id}/edit`}>
