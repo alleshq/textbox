@@ -22,7 +22,7 @@ const DocPage = props => (
   >
     <header>
       <h1>{props.doc.name}</h1>
-      <p>By <a href={`https://alles.cx/u/${props.doc.author}`}>@{props.doc.author}</a> at {moment(props.doc.date).format("LLL")}</p>
+      <p title={props.doc.editedAt ? `Edited at ${moment(props.doc.editedAt).format("LLL")}` : "Never Edited"}>By <a href={`https://alles.cx/u/${props.doc.author}`}>@{props.doc.author}</a> at {moment(props.doc.createdAt).format("LLL")}</p>
     </header>
     <div
       className="content"
@@ -69,7 +69,8 @@ DocPage.getInitialProps = () => {
     highlight: true,
     markdown: true,
     author: "archie",
-    date: new Date(0)
+    createdAt: new Date(0),
+    editedAt: new Date(100000000000)
   };
 
   if (doc.highlight && doc.markdown) {
