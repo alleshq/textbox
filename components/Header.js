@@ -28,7 +28,7 @@ export default props => (
     </div>
 
     {props.user ? (
-      <a className="profilePicture" href="/me">
+      <a className="profilePicture" href="https://alles.cx/me">
         <img src={`https://avatar.alles.cx/user/${props.user.id}`} />
       </a>
     ) : (
