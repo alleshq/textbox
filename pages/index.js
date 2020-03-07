@@ -1,6 +1,7 @@
 import Head from "next/head";
+import withAuth from "../util/withAuth";
 
-const Home = () => (
+const Home = props => (
   <div className="container">
     <Head>
       <title>Create Next App</title>
@@ -9,7 +10,7 @@ const Home = () => (
 
     <main>
       <h1 className="title">
-        Welcome to <a href="https://nextjs.org">Next.js!</a>
+        Welcome, {props.user.nickname}!
       </h1>
 
       <p className="description">
@@ -200,4 +201,4 @@ const Home = () => (
   </div>
 );
 
-export default Home;
+export default withAuth(Home, true);
