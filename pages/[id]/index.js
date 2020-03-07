@@ -64,6 +64,12 @@ const DocPage = props =>
         className="content"
         dangerouslySetInnerHTML={{ __html: props.doc.html }}
       ></div>
+      <a href="https://counter.alles.cx">
+        <img
+          src={`https://counter.alles.cx/textbox-${props.doc.id}`}
+          className="counter"
+        />
+      </a>
 
       <style jsx>{`
         header {
@@ -90,6 +96,13 @@ const DocPage = props =>
         .content {
           padding: 10px;
           white-space: ${props.doc.markdown ? "normal" : "pre-wrap"};
+        }
+
+        .counter {
+          width: 50px;
+          height: 50px;
+          margin-left: auto;
+          display: block;
         }
       `}</style>
     </Page>
