@@ -14,6 +14,7 @@ marked.setOptions({
 const DocPage = props => (
   <Page
     title={props.doc.id}
+    user={props.user}
     breadcrumbs={[
       {
         name: props.doc.id
