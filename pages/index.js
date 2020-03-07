@@ -3,7 +3,8 @@ import Page from "../components/Page";
 
 const Homepage = props => (
   <Page>
-    <h1>hi</h1>
+    <h1>We're using JetBrains Mono</h1>
+    <p>const Homepage = user !== null ? props {'=>'} (</p>
   </Page>
 );
 
