@@ -64,10 +64,9 @@ const DocPage = props =>
         className="content"
         dangerouslySetInnerHTML={{ __html: props.doc.html }}
       ></div>
-      <a href="https://counter.alles.cx">
+      <a href="https://counter.alles.cx" className="counter">
         <img
           src={`https://counter.alles.cx/textbox-${props.doc.id}`}
-          className="counter"
         />
       </a>
 
@@ -103,6 +102,11 @@ const DocPage = props =>
           height: 50px;
           margin-left: auto;
           display: block;
+        }
+
+        .counter img {
+          width: 100%;
+          height: 100%;
         }
       `}</style>
     </Page>
