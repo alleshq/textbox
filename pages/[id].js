@@ -28,7 +28,7 @@ const DocPage = props => props.doc ? (
   >
     <header>
       <h1>{props.doc.name}</h1>
-      <p title={props.doc.editedAt ? `Edited at ${moment(props.doc.editedAt).format("LLL")}` : "Never Edited"}>By <a href={`https://alles.cx/u/${props.doc.author}`}>@{props.doc.author}</a> at {moment(props.doc.createdAt).format("LLL")}</p>
+      <p title={props.doc.editedAt ? `Edited at ${moment(props.doc.editedAt).format("LLL")}` : "Never Edited"}>By <a href={`https://alles.cx/u/${props.doc.author.username}`}>@{props.doc.author.username}</a> at {moment(props.doc.createdAt).format("LLL")}</p>
     </header>
     <div
       className="content"
