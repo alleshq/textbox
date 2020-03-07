@@ -51,13 +51,10 @@ export default props => (
         text-decoration: none;
       }
 
-      a.normal {
-        color: white;
+      a.normal,
+      .content a {
         text-decoration: underline;
-      }
-
-      a.nocolor {
-        text-decoration: underline;
+        color: #6896ba;
       }
 
       @font-face {

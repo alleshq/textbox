@@ -24,6 +24,7 @@ export default props => (
       ) : (
         <></>
       )}
+      <span>/</span>
     </div>
 
     {props.user ? (
