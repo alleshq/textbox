@@ -10,6 +10,7 @@ export default props => (
     <Head>
       <title>{props.title ? `textbox/${props.title}/` : `textbox/`}</title>
       <link rel="shortcut icon" href="/icon.png" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
     </Head>
 
     <Header user={props.user} breadcrumbs={props.breadcrumbs} />
