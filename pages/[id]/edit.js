@@ -21,7 +21,7 @@ const DocPage = props => {
       if (!content.trim()) return;
       axios
         .post(
-          `${config.apiUrl}/${props.doc.id}/delete`,
+          `${config.apiUrl}/doc/${props.doc.id}/delete`,
           {},
           {
             headers: {
@@ -40,7 +40,7 @@ const DocPage = props => {
       if (content !== props.doc.content) {
         axios
           .post(
-            `${config.apiUrl}/${props.doc.id}/edit`,
+            `${config.apiUrl}/doc/${props.doc.id}/edit`,
             {
               content
             },
