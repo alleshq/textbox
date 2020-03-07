@@ -8,4 +8,4 @@ const Homepage = props => (
   </Page>
 );
 
-export default withAuth(Homepage, true);
+export default withAuth(Homepage);
