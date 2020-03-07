@@ -1,8 +1,5 @@
 import theme from "../theme";
-
 import Head from "next/head";
-import Link from "next/link";
-
 import Header from "./Header";
 
 export default props => (
@@ -40,14 +37,19 @@ export default props => (
       @import url("https://use.fontawesome.com/releases/v5.12.0/css/all.css");
 
       body {
-        font-family: JetBrainsMono, sans-serif;
         margin: 0;
         background: ${theme.background};
         color: #ffffff;
       }
 
-      code {
+      body,
+      code,
+      input,
+      textarea {
         font-family: JetBrainsMono, sans-serif;
+      }
+
+      code {
         background: ${theme.foreground};
         display: inline-block;
         padding: 10px;
@@ -64,7 +66,7 @@ export default props => (
       a.normal,
       .content a {
         text-decoration: underline;
-        color: #6896ba;
+        color: ${theme.blue};
       }
 
       @font-face {

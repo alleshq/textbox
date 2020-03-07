@@ -91,7 +91,7 @@ const DocPage = props =>
         </p>
         <p>
           Perhaps you could{" "}
-          <Link href="/new">
+          <Link href="/">
             <a>create a new one</a>
           </Link>
           .

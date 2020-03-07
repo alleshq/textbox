@@ -1,4 +1,9 @@
 {
   "foreground": "#242424",
-  "background": "#191919"
+  "background": "#191919",
+  "textfield": "#121212",
+  "yellow": "#e0c46c",
+  "green": "#6a8759",
+  "blue": "#6896ba",
+  "orange": "#cb7832"
 }
