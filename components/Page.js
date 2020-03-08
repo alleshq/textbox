@@ -69,6 +69,10 @@ export default props => (
         color: ${theme.blue};
       }
 
+      .content img {
+        max-width: 100%;
+      }
+
       @font-face {
         font-family: "JetBrainsMono";
         src: url("https://cdn.jsdelivr.net/gh/JetBrains/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2")
