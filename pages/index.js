@@ -46,10 +46,14 @@ const Homepage = props => {
         placeholder="Title..."
         defaultValue="Untitled Document"
         onFocus={e => {
-          if (e.target.value === e.target.defaultValue) e.target.value = "";
+          if (e.target.value === e.target.defaultValue) {
+            e.target.value = "";
+            setTitle(e.target.defaultValue);
+          }
         }}
         onBlur={e => {
           if (!e.target.value.trim()) e.target.value = e.target.defaultValue;
+          setTitle(e.target.defaultValue);
         }}
       />
       <textarea
