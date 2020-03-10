@@ -40,13 +40,14 @@ export default props => (
         margin: 0;
         background: ${theme.background};
         color: #ffffff;
+        font-family: JetBrainsMono, sans-serif;
       }
 
-      body,
       code,
+      pre,
       input,
       textarea {
-        font-family: JetBrainsMono, sans-serif;
+        font-family: inherit;
       }
 
       code {
