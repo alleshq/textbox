@@ -52,8 +52,10 @@ const Homepage = props => {
           }
         }}
         onBlur={e => {
-          if (!e.target.value.trim()) e.target.value = e.target.defaultValue;
-          setTitle(e.target.defaultValue);
+          if (!e.target.value.trim()) {
+            e.target.value = e.target.defaultValue;
+            setTitle(e.target.defaultValue);
+          }
         }}
       />
       <textarea
