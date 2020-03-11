@@ -65,9 +65,7 @@ const DocPage = props =>
         dangerouslySetInnerHTML={{ __html: props.doc.html }}
       ></div>
       <a href="https://counter.alles.cx" className="counter">
-        <img
-          src={`https://counter.alles.cx/textbox-${props.doc.id}`}
-        />
+        <img src={`https://counter.alles.cx/textbox-${props.doc.id}`} />
       </a>
 
       <style jsx>{`
