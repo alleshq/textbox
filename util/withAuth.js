@@ -39,7 +39,7 @@ export default (WrappedComponent, allowGuest) => {
 
     //Return Props
     return {
-      user: user,
+      user,
       ...childProps
     };
   };
