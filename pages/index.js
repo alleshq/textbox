@@ -106,6 +106,7 @@ const Homepage = props => {
             resize: none;
             height: 300px;
             font-size: 15px;
+            tab-size: 2;
           }
 
           .docOptions {
