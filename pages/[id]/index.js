@@ -94,6 +94,7 @@ const DocPage = props =>
           padding: 10px;
           white-space: ${props.doc.markdown ? "normal" : "pre-wrap"};
           tab-size: 2;
+          -moz-tab-size: 2;
         }
 
         .counter {

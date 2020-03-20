@@ -117,6 +117,7 @@ const DocPage = props => {
             padding: 10px;
             color: #ffffff;
             tab-size: 2;
+            -moz-tab-size: 2;
           }
 
           .docOptions {
