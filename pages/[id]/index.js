@@ -60,10 +60,14 @@ const DocPage = props =>
           at {moment(props.doc.createdAt).format("LLL")}
         </p>
       </header>
-      <div
-        className="content"
-        dangerouslySetInnerHTML={{ __html: props.doc.html }}
-      ></div>
+      {props.doc.highlight || props.doc.markdown ? (
+        <div
+          className="content"
+          dangerouslySetInnerHTML={{ __html: props.doc.html }}
+        ></div>
+      ) : (
+        <div className="content">{props.doc.content}</div>
+      )}
       <a href="https://counter.alles.cx" className="counter">
         <img src={`https://counter.alles.cx/textbox-${props.doc.id}`} />
       </a>
@@ -166,8 +170,6 @@ DocPage.getInitialProps = async ctx => {
     doc.html = hljs.highlightAuto(doc.content).value;
   } else if (doc.markdown) {
     doc.html = marked(insane(doc.content));
-  } else {
-    doc.html = insane(doc.content);
   }
 
   return {
