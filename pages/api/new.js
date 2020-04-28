@@ -45,7 +45,10 @@ export default async (req, res) => {
   //Create Document
   const doc = await db.Document.create({
     id: uuid(),
-    code: randomString(6),
+    code: randomString({
+      length: 10,
+      capitalization: "lowercase"
+    }),
     user: user.id,
     name: req.body.title,
     content: req.body.content,
