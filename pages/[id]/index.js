@@ -77,7 +77,7 @@ const DocPage = props => {
           <div className="content">{props.doc.content}</div>
         )}
         <a href="https://counter.alles.cx" className="counter">
-          <img src={`https://counter.alles.cx/textbox-${props.doc.id}`} />
+          <img src={`https://counter.alles.cx/txtbx-${props.doc.id}`} />
         </a>
 
         <style jsx>{`
