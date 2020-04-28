@@ -10,7 +10,7 @@ export default {
       max: 100
     },
     content: {
-      min: 10,
+      min: 1,
       max: 25000
     }
   }
