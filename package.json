@@ -1,31 +1,31 @@
 {
-  "name": "alles-site",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "format": "prettier --write \"**/*.+(js|jsx|json)\""
-  },
-  "dependencies": {
-    "@alleshq/log": "^1.0.0",
-    "@zeit/next-css": "^1.0.1",
-    "axios": "^0.19.1",
-    "highlight.js": "^9.18.1",
-    "insane": "^2.6.2",
-    "mariadb": "^2.3.1",
-    "marked": "^0.8.0",
-    "moment": "^2.24.0",
-    "next": "9.2.0",
-    "next-cookies": "^2.0.3",
-    "randomstring": "^1.1.5",
-    "react": "16.12.0",
-    "react-dom": "16.12.0",
-    "sequelize": "^5.21.6",
-    "uuid": "^7.0.3"
-  },
-  "devDependencies": {
-    "prettier": "^1.19.1"
-  }
+	"name": "alles-site",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"format": "prettier --write \"**/*.+(js|jsx|json)\""
+	},
+	"dependencies": {
+		"@alleshq/log": "^1.0.0",
+		"@zeit/next-css": "^1.0.1",
+		"axios": "^0.19.1",
+		"highlight.js": "^9.18.1",
+		"insane": "^2.6.2",
+		"mariadb": "^2.3.1",
+		"marked": "^0.8.0",
+		"moment": "^2.24.0",
+		"next": "9.2.0",
+		"next-cookies": "^2.0.3",
+		"randomstring": "^1.1.5",
+		"react": "16.12.0",
+		"react-dom": "16.12.0",
+		"sequelize": "^5.21.6",
+		"uuid": "^7.0.3"
+	},
+	"devDependencies": {
+		"prettier": "^2.0.5"
+	}
 }
