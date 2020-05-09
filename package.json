@@ -9,6 +9,7 @@
     "format": "prettier --write \"**/*.+(js|jsx|json)\""
   },
   "dependencies": {
+    "@alleshq/log": "^1.0.0",
     "@zeit/next-css": "^1.0.1",
     "axios": "^0.19.1",
     "highlight.js": "^9.18.1",

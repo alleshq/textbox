@@ -1,9 +1,11 @@
 import db from "../../util/db";
 import auth from "../../util/auth";
 import config from "../../config";
+import credentials from "../../credentials";
 import { Op } from "sequelize";
 import { v4 as uuid } from "uuid";
 import { generate as randomString } from "randomstring";
+import log from "@alleshq/log";
 
 export default async (req, res) => {
   const user = await auth(req.headers.authorization);
@@ -55,6 +57,17 @@ export default async (req, res) => {
     markdown: req.body.markdown,
     highlight: req.body.highlight
   });
+
+  //Log
+  log(
+    credentials.logarithm,
+    "textbox.new",
+    {
+      id: doc.id,
+      code: doc.code
+    },
+    user.id
+  );
 
   //Response
   res.json({
