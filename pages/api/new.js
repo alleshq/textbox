@@ -31,6 +31,9 @@ export default async (req, res) => {
 	)
 		return res.status(400).json({err: "contentLength"});
 
+	// Temp disable md
+	if (req.body.markdown) return res.status(503).json({err: "disabled"});
+
 	//Ratelimiting
 	const since = new Date(new Date().getTime() - 1000 * 60);
 	const recentDocs = await db.Document.count({
